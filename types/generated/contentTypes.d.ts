@@ -362,13 +362,12 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiBaytunaHeaderLinkBaytunaHeaderLink
-  extends Schema.CollectionType {
-  collectionName: 'baytuna_header_links';
+export interface ApiHeaderHeader extends Schema.SingleType {
+  collectionName: 'headers';
   info: {
-    singularName: 'baytuna-header-link';
-    pluralName: 'baytuna-header-links';
-    displayName: 'Baytuna Header Link';
+    singularName: 'header';
+    pluralName: 'headers';
+    displayName: 'Header Links Names';
     description: '';
   };
   options: {
@@ -380,13 +379,25 @@ export interface ApiBaytunaHeaderLinkBaytunaHeaderLink
     };
   };
   attributes: {
-    NameLink: Attribute.String &
+    NamePageHome: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    URL: Attribute.String &
+    NamePageAbout: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    NamePageServices: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    NamePageProjects: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -396,34 +407,33 @@ export interface ApiBaytunaHeaderLinkBaytunaHeaderLink
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::baytuna-header-link.baytuna-header-link',
+      'api::header.header',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::baytuna-header-link.baytuna-header-link',
+      'api::header.header',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     localizations: Attribute.Relation<
-      'api::baytuna-header-link.baytuna-header-link',
+      'api::header.header',
       'oneToMany',
-      'api::baytuna-header-link.baytuna-header-link'
+      'api::header.header'
     >;
     locale: Attribute.String;
   };
 }
 
-export interface ApiShockersHeaderLinkShockersHeaderLink
+export interface ApiShockersAboutUsShockersAboutUs
   extends Schema.CollectionType {
-  collectionName: 'shockers_header_links';
+  collectionName: 'shockers_about_uses';
   info: {
-    singularName: 'shockers-header-link';
-    pluralName: 'shockers-header-links';
-    displayName: 'Shockers Header Link';
-    description: '';
+    singularName: 'shockers-about-us';
+    pluralName: 'shockers-about-uses';
+    displayName: 'Shockers About US';
   };
   options: {
     draftAndPublish: true;
@@ -434,13 +444,19 @@ export interface ApiShockersHeaderLinkShockersHeaderLink
     };
   };
   attributes: {
-    NameLink: Attribute.String &
+    title: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    URL: Attribute.String &
+    description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    imgURL: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -450,21 +466,21 @@ export interface ApiShockersHeaderLinkShockersHeaderLink
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::shockers-header-link.shockers-header-link',
+      'api::shockers-about-us.shockers-about-us',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::shockers-header-link.shockers-header-link',
+      'api::shockers-about-us.shockers-about-us',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     localizations: Attribute.Relation<
-      'api::shockers-header-link.shockers-header-link',
+      'api::shockers-about-us.shockers-about-us',
       'oneToMany',
-      'api::shockers-header-link.shockers-header-link'
+      'api::shockers-about-us.shockers-about-us'
     >;
     locale: Attribute.String;
   };
@@ -905,8 +921,8 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::baytuna-header-link.baytuna-header-link': ApiBaytunaHeaderLinkBaytunaHeaderLink;
-      'api::shockers-header-link.shockers-header-link': ApiShockersHeaderLinkShockersHeaderLink;
+      'api::header.header': ApiHeaderHeader;
+      'api::shockers-about-us.shockers-about-us': ApiShockersAboutUsShockersAboutUs;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
