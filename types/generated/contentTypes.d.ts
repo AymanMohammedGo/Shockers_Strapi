@@ -492,6 +492,83 @@ export interface ApiShockersAboutUsShockersAboutUs
   };
 }
 
+export interface ApiSolganForBrandSolganForBrand extends Schema.SingleType {
+  collectionName: 'solgan_for_brands';
+  info: {
+    singularName: 'solgan-for-brand';
+    pluralName: 'solgan-for-brands';
+    displayName: 'Solgan for Brand';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Shockers: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Baytuna: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Deca: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Yard: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Ymarketing: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Shocky: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::solgan-for-brand.solgan-for-brand',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::solgan-for-brand.solgan-for-brand',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::solgan-for-brand.solgan-for-brand',
+      'oneToMany',
+      'api::solgan-for-brand.solgan-for-brand'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -929,6 +1006,7 @@ declare module '@strapi/types' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::header.header': ApiHeaderHeader;
       'api::shockers-about-us.shockers-about-us': ApiShockersAboutUsShockersAboutUs;
+      'api::solgan-for-brand.solgan-for-brand': ApiSolganForBrandSolganForBrand;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
