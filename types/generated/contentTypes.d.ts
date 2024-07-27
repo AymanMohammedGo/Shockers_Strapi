@@ -846,6 +846,82 @@ export interface ApiBaytunaBaytuna extends Schema.CollectionType {
   };
 }
 
+export interface ApiBaytunaHomeBaytunaHome extends Schema.SingleType {
+  collectionName: 'baytuna_homes';
+  info: {
+    singularName: 'baytuna-home';
+    pluralName: 'baytuna-homes';
+    displayName: 'Baytuna Home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    TitleAbout: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    DescriptionAbout: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TextButton: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    NameServices: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ImgServices: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    NameProjects: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::baytuna-home.baytuna-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::baytuna-home.baytuna-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::baytuna-home.baytuna-home',
+      'oneToMany',
+      'api::baytuna-home.baytuna-home'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiBaytunaServiceBaytunaService extends Schema.CollectionType {
   collectionName: 'baytuna_services';
   info: {
@@ -899,6 +975,118 @@ export interface ApiBaytunaServiceBaytunaService extends Schema.CollectionType {
       'api::baytuna-service.baytuna-service',
       'oneToMany',
       'api::baytuna-service.baytuna-service'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiBaytunaTopAboutBaytunaTopAbout extends Schema.SingleType {
+  collectionName: 'baytuna_top_abouts';
+  info: {
+    singularName: 'baytuna-top-about';
+    pluralName: 'baytuna-top-abouts';
+    displayName: 'Baytuna Top About';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    namePage: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    imgURL: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::baytuna-top-about.baytuna-top-about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::baytuna-top-about.baytuna-top-about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::baytuna-top-about.baytuna-top-about',
+      'oneToMany',
+      'api::baytuna-top-about.baytuna-top-about'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiBaytunaTopServiceBaytunaTopService
+  extends Schema.SingleType {
+  collectionName: 'baytuna_top_services';
+  info: {
+    singularName: 'baytuna-top-service';
+    pluralName: 'baytuna-top-services';
+    displayName: 'Baytuna Top Services';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    namePage: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    imgURL: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::baytuna-top-service.baytuna-top-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::baytuna-top-service.baytuna-top-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::baytuna-top-service.baytuna-top-service',
+      'oneToMany',
+      'api::baytuna-top-service.baytuna-top-service'
     >;
     locale: Attribute.String;
   };
@@ -962,6 +1150,82 @@ export interface ApiDecaAboutUsDecaAboutUs extends Schema.CollectionType {
   };
 }
 
+export interface ApiDecaHomeDecaHome extends Schema.SingleType {
+  collectionName: 'deca_homes';
+  info: {
+    singularName: 'deca-home';
+    pluralName: 'deca-homes';
+    displayName: 'Deca Home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    TitleAbout: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    DescriptionAbout: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TextButton: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    NameServices: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ImgServices: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    NameProjects: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::deca-home.deca-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::deca-home.deca-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::deca-home.deca-home',
+      'oneToMany',
+      'api::deca-home.deca-home'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiDecaServiceDecaService extends Schema.CollectionType {
   collectionName: 'deca_services';
   info: {
@@ -1015,6 +1279,116 @@ export interface ApiDecaServiceDecaService extends Schema.CollectionType {
       'api::deca-service.deca-service',
       'oneToMany',
       'api::deca-service.deca-service'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiDecaTopAboutDecaTopAbout extends Schema.SingleType {
+  collectionName: 'deca_top_abouts';
+  info: {
+    singularName: 'deca-top-about';
+    pluralName: 'deca-top-abouts';
+    displayName: 'Deca Top About';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    namePage: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    imgURL: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::deca-top-about.deca-top-about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::deca-top-about.deca-top-about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::deca-top-about.deca-top-about',
+      'oneToMany',
+      'api::deca-top-about.deca-top-about'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiDecaTopServiceDecaTopService extends Schema.SingleType {
+  collectionName: 'deca_top_services';
+  info: {
+    singularName: 'deca-top-service';
+    pluralName: 'deca-top-services';
+    displayName: 'Deca Top Services';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    namePage: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    imgURL: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::deca-top-service.deca-top-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::deca-top-service.deca-top-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::deca-top-service.deca-top-service',
+      'oneToMany',
+      'api::deca-top-service.deca-top-service'
     >;
     locale: Attribute.String;
   };
@@ -1433,6 +1807,118 @@ export interface ApiShockersServiceShockersService
   };
 }
 
+export interface ApiShockersTopAboutShockersTopAbout extends Schema.SingleType {
+  collectionName: 'shockers_top_abouts';
+  info: {
+    singularName: 'shockers-top-about';
+    pluralName: 'shockers-top-abouts';
+    displayName: 'Shockers Top About';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    namePage: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    imgURL: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shockers-top-about.shockers-top-about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shockers-top-about.shockers-top-about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::shockers-top-about.shockers-top-about',
+      'oneToMany',
+      'api::shockers-top-about.shockers-top-about'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiShockersTopServiceShockersTopService
+  extends Schema.SingleType {
+  collectionName: 'shockers_top_services';
+  info: {
+    singularName: 'shockers-top-service';
+    pluralName: 'shockers-top-services';
+    displayName: 'Shockers Top Services';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    namePage: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    imgURL: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shockers-top-service.shockers-top-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shockers-top-service.shockers-top-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::shockers-top-service.shockers-top-service',
+      'oneToMany',
+      'api::shockers-top-service.shockers-top-service'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiSolganForBrandSolganForBrand extends Schema.SingleType {
   collectionName: 'solgan_for_brands';
   info: {
@@ -1529,15 +2015,23 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::baytuna.baytuna': ApiBaytunaBaytuna;
+      'api::baytuna-home.baytuna-home': ApiBaytunaHomeBaytunaHome;
       'api::baytuna-service.baytuna-service': ApiBaytunaServiceBaytunaService;
+      'api::baytuna-top-about.baytuna-top-about': ApiBaytunaTopAboutBaytunaTopAbout;
+      'api::baytuna-top-service.baytuna-top-service': ApiBaytunaTopServiceBaytunaTopService;
       'api::deca-about-us.deca-about-us': ApiDecaAboutUsDecaAboutUs;
+      'api::deca-home.deca-home': ApiDecaHomeDecaHome;
       'api::deca-service.deca-service': ApiDecaServiceDecaService;
+      'api::deca-top-about.deca-top-about': ApiDecaTopAboutDecaTopAbout;
+      'api::deca-top-service.deca-top-service': ApiDecaTopServiceDecaTopService;
       'api::header.header': ApiHeaderHeader;
       'api::shockers-about-us.shockers-about-us': ApiShockersAboutUsShockersAboutUs;
       'api::shockers-categorie.shockers-categorie': ApiShockersCategorieShockersCategorie;
       'api::shockers-home.shockers-home': ApiShockersHomeShockersHome;
       'api::shockers-project.shockers-project': ApiShockersProjectShockersProject;
       'api::shockers-service.shockers-service': ApiShockersServiceShockersService;
+      'api::shockers-top-about.shockers-top-about': ApiShockersTopAboutShockersTopAbout;
+      'api::shockers-top-service.shockers-top-service': ApiShockersTopServiceShockersTopService;
       'api::solgan-for-brand.solgan-for-brand': ApiSolganForBrandSolganForBrand;
     }
   }

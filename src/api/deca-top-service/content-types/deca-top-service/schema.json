@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "deca_top_services",
+  "info": {
+    "singularName": "deca-top-service",
+    "pluralName": "deca-top-services",
+    "displayName": "Deca Top Services"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "namePage": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "imgURL": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
