@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shockers_social_medias",
+  "info": {
+    "singularName": "shockers-social-media",
+    "pluralName": "shockers-social-medias",
+    "displayName": "Shockers Social Media"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "LinkURL": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
+    }
+  }
+}

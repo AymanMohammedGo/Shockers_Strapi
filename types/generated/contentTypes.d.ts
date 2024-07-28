@@ -1582,6 +1582,107 @@ export interface ApiShockersCategorieShockersCategorie
   };
 }
 
+export interface ApiShockersFooterShockersFooter extends Schema.SingleType {
+  collectionName: 'shockers_footers';
+  info: {
+    singularName: 'shockers-footer';
+    pluralName: 'shockers-footers';
+    displayName: 'Shockers Footer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    CityAddress: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Phone: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Email: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    LinkAddress: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    DetailedAddress: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleAddress: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleEmail: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitlePhone: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleSocialMedia: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    PrivacyPolicy: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shockers-footer.shockers-footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shockers-footer.shockers-footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::shockers-footer.shockers-footer',
+      'oneToMany',
+      'api::shockers-footer.shockers-footer'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiShockersHomeShockersHome extends Schema.SingleType {
   collectionName: 'shockers_homes';
   info: {
@@ -1807,6 +1908,59 @@ export interface ApiShockersServiceShockersService
   };
 }
 
+export interface ApiShockersSocialMediaShockersSocialMedia
+  extends Schema.CollectionType {
+  collectionName: 'shockers_social_medias';
+  info: {
+    singularName: 'shockers-social-media';
+    pluralName: 'shockers-social-medias';
+    displayName: 'Shockers Social Media';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    LinkURL: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shockers-social-media.shockers-social-media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shockers-social-media.shockers-social-media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::shockers-social-media.shockers-social-media',
+      'oneToMany',
+      'api::shockers-social-media.shockers-social-media'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiShockersTopAboutShockersTopAbout extends Schema.SingleType {
   collectionName: 'shockers_top_abouts';
   info: {
@@ -2027,9 +2181,11 @@ declare module '@strapi/types' {
       'api::header.header': ApiHeaderHeader;
       'api::shockers-about-us.shockers-about-us': ApiShockersAboutUsShockersAboutUs;
       'api::shockers-categorie.shockers-categorie': ApiShockersCategorieShockersCategorie;
+      'api::shockers-footer.shockers-footer': ApiShockersFooterShockersFooter;
       'api::shockers-home.shockers-home': ApiShockersHomeShockersHome;
       'api::shockers-project.shockers-project': ApiShockersProjectShockersProject;
       'api::shockers-service.shockers-service': ApiShockersServiceShockersService;
+      'api::shockers-social-media.shockers-social-media': ApiShockersSocialMediaShockersSocialMedia;
       'api::shockers-top-about.shockers-top-about': ApiShockersTopAboutShockersTopAbout;
       'api::shockers-top-service.shockers-top-service': ApiShockersTopServiceShockersTopService;
       'api::solgan-for-brand.solgan-for-brand': ApiSolganForBrandSolganForBrand;
