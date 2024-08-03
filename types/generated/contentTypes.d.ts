@@ -1076,6 +1076,59 @@ export interface ApiBaytunaServiceBaytunaService extends Schema.CollectionType {
   };
 }
 
+export interface ApiBaytunaSocialMediaBaytunaSocialMedia
+  extends Schema.CollectionType {
+  collectionName: 'baytuna_social_medias';
+  info: {
+    singularName: 'baytuna-social-media';
+    pluralName: 'baytuna-social-medias';
+    displayName: 'Baytuna Social Media';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    LinkURL: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::baytuna-social-media.baytuna-social-media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::baytuna-social-media.baytuna-social-media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::baytuna-social-media.baytuna-social-media',
+      'oneToMany',
+      'api::baytuna-social-media.baytuna-social-media'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiBaytunaTopAboutBaytunaTopAbout extends Schema.SingleType {
   collectionName: 'baytuna_top_abouts';
   info: {
@@ -1460,6 +1513,59 @@ export interface ApiDecaServiceDecaService extends Schema.CollectionType {
       'api::deca-service.deca-service',
       'oneToMany',
       'api::deca-service.deca-service'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiDecaSocialMediaDecaSocialMedia
+  extends Schema.CollectionType {
+  collectionName: 'deca_social_medias';
+  info: {
+    singularName: 'deca-social-media';
+    pluralName: 'deca-social-medias';
+    displayName: 'Deca Social Media';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    LinkURL: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::deca-social-media.deca-social-media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::deca-social-media.deca-social-media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::deca-social-media.deca-social-media',
+      'oneToMany',
+      'api::deca-social-media.deca-social-media'
     >;
     locale: Attribute.String;
   };
@@ -2321,12 +2427,14 @@ declare module '@strapi/types' {
       'api::baytuna-footer.baytuna-footer': ApiBaytunaFooterBaytunaFooter;
       'api::baytuna-home.baytuna-home': ApiBaytunaHomeBaytunaHome;
       'api::baytuna-service.baytuna-service': ApiBaytunaServiceBaytunaService;
+      'api::baytuna-social-media.baytuna-social-media': ApiBaytunaSocialMediaBaytunaSocialMedia;
       'api::baytuna-top-about.baytuna-top-about': ApiBaytunaTopAboutBaytunaTopAbout;
       'api::baytuna-top-service.baytuna-top-service': ApiBaytunaTopServiceBaytunaTopService;
       'api::deca-about-us.deca-about-us': ApiDecaAboutUsDecaAboutUs;
       'api::deca-footer.deca-footer': ApiDecaFooterDecaFooter;
       'api::deca-home.deca-home': ApiDecaHomeDecaHome;
       'api::deca-service.deca-service': ApiDecaServiceDecaService;
+      'api::deca-social-media.deca-social-media': ApiDecaSocialMediaDecaSocialMedia;
       'api::deca-top-about.deca-top-about': ApiDecaTopAboutDecaTopAbout;
       'api::deca-top-service.deca-top-service': ApiDecaTopServiceDecaTopService;
       'api::header.header': ApiHeaderHeader;
