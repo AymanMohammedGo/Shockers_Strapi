@@ -4,7 +4,8 @@
   "info": {
     "singularName": "deca-service",
     "pluralName": "deca-services",
-    "displayName": "Deca Services"
+    "displayName": "Deca Services",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -30,18 +31,6 @@
         }
       },
       "type": "text"
-    },
-    "imgURL": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
     }
   }
 }

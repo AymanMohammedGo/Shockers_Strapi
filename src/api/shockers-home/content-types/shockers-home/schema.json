@@ -4,7 +4,8 @@
   "info": {
     "singularName": "shockers-home",
     "pluralName": "shockers-homes",
-    "displayName": "Shockers Home"
+    "displayName": "Shockers Home",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -40,26 +41,6 @@
       "type": "string"
     },
     "NameServices": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string"
-    },
-    "ImgServices": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "NameProjects": {
       "pluginOptions": {
         "i18n": {
           "localized": true

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "baytuna-top-about",
     "pluralName": "baytuna-top-abouts",
-    "displayName": "Baytuna Top About"
+    "displayName": "Baytuna Top About",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,20 +24,13 @@
       },
       "type": "string"
     },
-    "namePage": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string"
-    },
     "imgURL": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true

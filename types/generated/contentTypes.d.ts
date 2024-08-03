@@ -846,12 +846,125 @@ export interface ApiBaytunaBaytuna extends Schema.CollectionType {
   };
 }
 
+export interface ApiBaytunaFooterBaytunaFooter extends Schema.SingleType {
+  collectionName: 'baytuna_footers';
+  info: {
+    singularName: 'baytuna-footer';
+    pluralName: 'baytuna-footers';
+    displayName: 'Baytuna Footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Phone: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Email: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    LinkAddress: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CityAddress: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    DetailedAddress: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleAddress: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleEmail: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitlePhone: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleSocialMedia: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    PrivacyPolicy: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Phone1: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Email1: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::baytuna-footer.baytuna-footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::baytuna-footer.baytuna-footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::baytuna-footer.baytuna-footer',
+      'oneToMany',
+      'api::baytuna-footer.baytuna-footer'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiBaytunaHomeBaytunaHome extends Schema.SingleType {
   collectionName: 'baytuna_homes';
   info: {
     singularName: 'baytuna-home';
     pluralName: 'baytuna-homes';
     displayName: 'Baytuna Home';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -881,18 +994,6 @@ export interface ApiBaytunaHomeBaytunaHome extends Schema.SingleType {
         };
       }>;
     NameServices: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ImgServices: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    NameProjects: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -928,6 +1029,7 @@ export interface ApiBaytunaServiceBaytunaService extends Schema.CollectionType {
     singularName: 'baytuna-service';
     pluralName: 'baytuna-services';
     displayName: 'Baytuna Services';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -945,12 +1047,6 @@ export interface ApiBaytunaServiceBaytunaService extends Schema.CollectionType {
         };
       }>;
     description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    imgURL: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -986,6 +1082,7 @@ export interface ApiBaytunaTopAboutBaytunaTopAbout extends Schema.SingleType {
     singularName: 'baytuna-top-about';
     pluralName: 'baytuna-top-abouts';
     displayName: 'Baytuna Top About';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -997,12 +1094,6 @@ export interface ApiBaytunaTopAboutBaytunaTopAbout extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    namePage: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1056,12 +1147,6 @@ export interface ApiBaytunaTopServiceBaytunaTopService
     };
   };
   attributes: {
-    namePage: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     imgURL: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1150,12 +1235,125 @@ export interface ApiDecaAboutUsDecaAboutUs extends Schema.CollectionType {
   };
 }
 
+export interface ApiDecaFooterDecaFooter extends Schema.SingleType {
+  collectionName: 'deca_footers';
+  info: {
+    singularName: 'deca-footer';
+    pluralName: 'deca-footers';
+    displayName: 'Deca Footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Phone: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Email: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    LinkAddress: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CityAddress: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    DetailedAddress: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleAddress: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleEmail: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitlePhone: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleSocialMedia: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    PrivacyPolicy: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Phone1: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Email1: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::deca-footer.deca-footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::deca-footer.deca-footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::deca-footer.deca-footer',
+      'oneToMany',
+      'api::deca-footer.deca-footer'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiDecaHomeDecaHome extends Schema.SingleType {
   collectionName: 'deca_homes';
   info: {
     singularName: 'deca-home';
     pluralName: 'deca-homes';
     displayName: 'Deca Home';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1185,18 +1383,6 @@ export interface ApiDecaHomeDecaHome extends Schema.SingleType {
         };
       }>;
     NameServices: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ImgServices: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    NameProjects: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1232,6 +1418,7 @@ export interface ApiDecaServiceDecaService extends Schema.CollectionType {
     singularName: 'deca-service';
     pluralName: 'deca-services';
     displayName: 'Deca Services';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1249,12 +1436,6 @@ export interface ApiDecaServiceDecaService extends Schema.CollectionType {
         };
       }>;
     description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    imgURL: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1290,6 +1471,7 @@ export interface ApiDecaTopAboutDecaTopAbout extends Schema.SingleType {
     singularName: 'deca-top-about';
     pluralName: 'deca-top-abouts';
     displayName: 'Deca Top About';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1301,12 +1483,6 @@ export interface ApiDecaTopAboutDecaTopAbout extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    namePage: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1348,6 +1524,7 @@ export interface ApiDecaTopServiceDecaTopService extends Schema.SingleType {
     singularName: 'deca-top-service';
     pluralName: 'deca-top-services';
     displayName: 'Deca Top Services';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1358,12 +1535,6 @@ export interface ApiDecaTopServiceDecaTopService extends Schema.SingleType {
     };
   };
   attributes: {
-    namePage: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     imgURL: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1430,12 +1601,6 @@ export interface ApiHeaderHeader extends Schema.SingleType {
         };
       }>;
     NamePageProjects: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    NameMainPage: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1701,6 +1866,7 @@ export interface ApiShockersHomeShockersHome extends Schema.SingleType {
     singularName: 'shockers-home';
     pluralName: 'shockers-homes';
     displayName: 'Shockers Home';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1730,18 +1896,6 @@ export interface ApiShockersHomeShockersHome extends Schema.SingleType {
         };
       }>;
     NameServices: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ImgServices: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    NameProjects: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1890,12 +2044,6 @@ export interface ApiShockersServiceShockersService
           localized: true;
         };
       }>;
-    imgURL: Attribute.Media<'images'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1979,6 +2127,7 @@ export interface ApiShockersTopAboutShockersTopAbout extends Schema.SingleType {
     singularName: 'shockers-top-about';
     pluralName: 'shockers-top-abouts';
     displayName: 'Shockers Top About';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1989,12 +2138,6 @@ export interface ApiShockersTopAboutShockersTopAbout extends Schema.SingleType {
     };
   };
   attributes: {
-    namePage: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     title: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2049,12 +2192,6 @@ export interface ApiShockersTopServiceShockersTopService
     };
   };
   attributes: {
-    namePage: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     imgURL: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2181,11 +2318,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::baytuna.baytuna': ApiBaytunaBaytuna;
+      'api::baytuna-footer.baytuna-footer': ApiBaytunaFooterBaytunaFooter;
       'api::baytuna-home.baytuna-home': ApiBaytunaHomeBaytunaHome;
       'api::baytuna-service.baytuna-service': ApiBaytunaServiceBaytunaService;
       'api::baytuna-top-about.baytuna-top-about': ApiBaytunaTopAboutBaytunaTopAbout;
       'api::baytuna-top-service.baytuna-top-service': ApiBaytunaTopServiceBaytunaTopService;
       'api::deca-about-us.deca-about-us': ApiDecaAboutUsDecaAboutUs;
+      'api::deca-footer.deca-footer': ApiDecaFooterDecaFooter;
       'api::deca-home.deca-home': ApiDecaHomeDecaHome;
       'api::deca-service.deca-service': ApiDecaServiceDecaService;
       'api::deca-top-about.deca-top-about': ApiDecaTopAboutDecaTopAbout;
